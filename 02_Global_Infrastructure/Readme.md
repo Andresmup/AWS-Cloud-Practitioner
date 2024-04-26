@@ -169,3 +169,133 @@ The following AWS Services **uses POPs for content delivery or expediated upload
 *AWS Global Accelerator*:
  - Can find the optimal path from the end users to your web servers.
  - Global Accelerator are deployed within Edge Locations so you can send web traffic to and Edge Location instead of directly to your web-application.
+
+## AWS DIRECT CONNECT
+
+AWS Direct Connect is a **private/dedicated connection between your datacenter, office, co-location and AWS**. The benefits are:
+ - Helps reduce network cost and increase bandwidth traffict throughtput (great for high traffic network).
+ - Provides more consistent network experience than a typical internet-based connection (reliatable and secure).
+
+A co-location (or carrier-hotel) is a data center where equipment, space, and bandwidth are available for rental to retail customers.
+
+Direct connect has two very-fast connection options:
+ 1. Lower Bandwidth 50MBps - 500MBps
+ 2. Higher Bandwidth 1GBps - 10GBps
+
+### Direct Connect Locations
+
+Direct Connect Locations are trusted partnered datacenters that you can establish a **dedicated high speed, low latency connection from your on-premise to AWS**. You could use the AWS Direct Connect service to order and establish a connection.
+
+## AWS LOCAL ZONES
+
+Local Zones are datacenters located very close to a densely populated area to provide a single-digit millisecond low latency perfomance for that area (eg: 5ms). To use Local Zones you need to Opt-in.
+ - Only specific AWS Services are availables.
+ - Its a logical extension of a Region.
+ - The identifies looks like this us-west-2-lax-1a (for Los Angeles, California which is a extension of us-west region)
+
+The purpose of Local Zone is the support highly-demanding applications sensitive to latencies:
+ - Media & Entretainment
+ - Electronic Design Automation
+ - Ad-Tech
+ - Machine Learning
+
+## AWS WAVELENGHT ZONES
+
+AWS Wavelenght Zones allows for **edge-computing on 5G network**. Applications will have ultra low latency being as close as possible to users. AWS has partnered with various Telecom companies to utilize their 5G network.
+
+You create a Subnet tied to a Wavelenght Zone and then you can launch Virual Machines (VMs) to the edge of the targeret 5G Network.
+
+## DATA RESIDENCY
+
+### What is Data Residency?
+
+The physical or geographic location of where an organization or cloud resources reside.
+
+### What is Compliance Boundaries?
+
+A regulatory compliance (legal requirement) by a goverment or organization that describes where data and cloud resources are allowed to reside.
+
+### What is Data Sovereignty?
+
+Data Sovereignty is the jurisdictional control or legal authority that can be asserted over data because it's pyshical location it within jurisdictional boundaries.
+
+For workloads that need to meet compliance boundaries strictly defining the data residency of data and cloud resources in AWS you can use:
+ - AWS Outposts: Is a physical **rack of servers** that you can put in your datacenter. Your data will reside whenever the Outposts physical resides.
+ - AWS Config: Is a **Policy as Code** services. You can create rules to continuous check AWS resources configuration. If they deviate from your expectations you are alerted or AWS Config can in some cases auto-remediates.
+ - IAM Policies: Can be written explicitly deni access to specific AWS Regions. A Services Control Policy (SCP) are permissions applied organization wide.
+
+## AWS FOR GOVERMENT
+
+### What is Public Sector?
+
+Public Sector includes public goods and govermental services such as (military, law enforcement, infrastructure, public transit, public education, health care, goverment itself).
+
+AWS can be utilized by public sector or organizations developing cloud workloads for the public sector.
+
+AWS achieves the by meeting regulatory compliance programs along with specific governance and security controls.
+
+AWS has special regions for US regulation called GovCloud.
+
+## GOVCLOUD 
+
+Federal Risk and Authorization Management Program (FedRAMP) is a US government-wide program that provides a standardized approach to security assesment, authorization and continuous monitoring for cloud products and services.
+
+### What is GovCloud?
+
+A Cloud Service Provider (CSP) generally will offer an isolated region to run FedRAMP workloads.
+
+AWS GovCloud Regions allows customers to host sensitive Controlled Unclassified Information and other types or regulated workloads.
+ - GovCloud Regions are only operated by employees who are US citizens on US soil.
+ - They are only accessible to US entities and root account holders who pass an screening process.
+
+Customers can architect secure cloud solutions that comply with:
+ - FedRAMP high baseline.
+ - DOJ's Criminal Justice Information System (CJIS) Security Policy
+ - US International Traffic in Arms Regulations (ITAR)
+ - Export Administration Regulations (EAR)
+ - Department of Defense (DoD) Cloud Computing Security Requirements Guide
+
+## AWS CHINA
+
+AWS China is the AWS cloud offerings in Mainland AWS China. AWS China is completely isolated *intentionally* from AWS Global to meet regulatory compliance for Mainland China. AWS China has it own domain at amazonaws.cn
+
+ - In order to operate in AWS China Region you need have a Chinese Business Licence (ICP License).
+ - Not all services are available in China.
+ - Running in Mainland China means you would not need to traverse the The Great Firewall.
+
+AWS has two regions in Mainland China:
+ - Ningxia cn-northwest-1 operated by NSWCF
+ - Beijing cn-north-1 operated by SINNET
+
+## SUSTAINABILITY
+
+Amazon co-founded the Climate Pledge to achieve Zero-Net Carbon Emissions by 2040 across all of Amazon Business (including AWS).
+
+AWS Cloud's Sustainability goal are composed by three parts:
+ 1. Renewable Energy: AWS is working towards having their AWS Global Infrastructure powered by 100% renewable energy by 2025.
+ 2. Cloud Efficiency: AWS's infrastructure is 3.6 times more energy efficient than the median of US enterprise data centers surveyed.
+ 3. Water Stewarship: Direct evaporative technology to cool aws data centers. Use of non-potable water for cooling purposes (recycled water). On-site water threatment allows aws to remove scale-forming materials and reuse water for more cycles. Water efficency metrics to determine and monitor optimal water use for each AWS region.
+
+AWS purchases and retires enviromental attributes to cover non-renewable energy for AWS Global Infrastructure.
+ - Renewable Energy Credits (RECs)
+ - Guarantees of Origin (GOs)
+
+## GROUND STATION
+
+AWS Ground Station is a fully managed service that lets you control satellite communications, process data, and scale your application without having to worry about building or managing your own ground station infrastructure.
+
+To use Groud Station:
+ - You schedule a Contact (select satellite, start and end time, ground location)
+ - Use the AWS Ground Station EC2 AMI to lauch EC2 instances that will uplink and downlink data during the contact or receive downlinked data in an AWS S3 Bucket.
+
+Use cases for Ground Station:
+ - Wheather forecasting
+ - Surface imaging
+ - Communications
+ - Video broadcast
+
+## AWS OUTPOSTS
+
+AWS Outposts is a fully managed service that offers the same AWS infrastructure, AWS Services, APIs and tools to virtually any datacenter, co-location space or on-premise facility for a truly consistent hybrid experience.
+
+AWS Outpost is a rack of servers running AWS infrastructure on your physical location.
